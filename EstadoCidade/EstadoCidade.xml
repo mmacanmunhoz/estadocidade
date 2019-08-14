@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EstadoCidade</name>
+    </assembly>
+    <members>
+        <member name="M:EstadoCidade.Controllers.EstadosController.#ctor(EstadoCidade.Interfaces.IEstadosServices)">
+            <summary>
+            
+            </summary>
+            <param name="estadosServices"></param>
+        </member>
+        <member name="M:EstadoCidade.Controllers.EstadosController.GetEstados">
+            <summary>
+            Retorna todos os estados brasileiros
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EstadoCidade.Controllers.EstadosController.GetEstadosByID(System.String)">
+            <summary>
+            Retorna  estados brasileiros por id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EstadoCidade.Controllers.EstadosController.GetEstadosByNome(System.String)">
+            <summary>
+            Retorna estados brasileiros pelo nome
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
