@@ -23,7 +23,7 @@ namespace EstadoCidade.Controllers
         /// <summary>
         /// Retorna todos os estados brasileiros
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Lista EstadoModel</returns>
         [HttpGet]
         public List<EstadoModel> GetEstados()
         {
@@ -31,9 +31,10 @@ namespace EstadoCidade.Controllers
         }
 
         /// <summary>
-        /// Retorna  estados brasileiros por id
+        /// Retorna todos os estados de acordo com o id solicitado
         /// </summary>
-        /// <returns></returns>
+        /// <param name="id">String</param>
+        /// <returns>Lista EstadoModel</returns>
         [HttpGet]
         [Route("{id}")]
         public List<EstadoModel> GetEstadosByID(string id)
@@ -41,9 +42,10 @@ namespace EstadoCidade.Controllers
             return _estadosServices.GetEstadosById(id);
         }
         /// <summary>
-        /// Retorna estados brasileiros pelo nome
+        /// Retorna todos os estados de acordo que contenha o nome solicitado
         /// </summary>
-        /// <returns></returns>
+        /// <param name="nome">string</param>
+        /// <returns>Lista EstadoModel</returns>
         [HttpGet]
         [Route("/Nome/{nome}")]
         public List<EstadoModel> GetEstadosByNome(string nome)
