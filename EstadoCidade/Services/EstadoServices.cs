@@ -16,7 +16,7 @@ namespace EstadoCidade.Services
         private static JArray LerArquivo()
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + @"Jsons\Estados.json";
-            return ReadFile.Read(path);
+            return ReadFile.ReadJson(path);
         }
 
         public List<EstadoModel> GetEstados()

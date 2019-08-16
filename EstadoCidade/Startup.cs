@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EstadoCidade.Context;
 using EstadoCidade.Interfaces;
 using EstadoCidade.Services;
 using Microsoft.AspNetCore.Builder;
@@ -47,6 +48,7 @@ namespace EstadoCidade
         {
             services.AddScoped<IEstadosServices, EstadosServices>();
             services.AddScoped<ICidadesService, CidadeServices>();
+            services.AddScoped<ICepServices, CepServices>();
         }
 
         public Startup(IConfiguration configuration)
@@ -88,6 +90,11 @@ namespace EstadoCidade
             app.UseSwaggerUI(c => {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "EstadoCidade API V1");
             });
+
+            MongoDbContext.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
+            MongoDbContext.DatabaseName = Configuration.GetSection("MongoConnection:Database").Value;
+            MongoDbContext.IsSSL = Convert.ToBoolean(this.Configuration.GetSection("MongoConnection:IsSSL").Value);
+
 
             app.UseHttpsRedirection();
             app.UseMvc();

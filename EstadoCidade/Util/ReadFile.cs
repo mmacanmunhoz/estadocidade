@@ -10,9 +10,13 @@ namespace EstadoCidade.Util
 {
     public class ReadFile
     {
-        public static JArray Read(string filepath)
+        public static string[] ReadTXT(string filepath)
         {
-            return JArray.Parse(File.ReadAllText(filepath, Encoding.GetEncoding(28591)));
+            return File.ReadAllLines(filepath);
+        }
+        public static JArray ReadJson(string filepath)
+        {
+            return JArray.Parse(File.ReadAllText(filepath, Encoding.GetEncoding(28591)));            
         }
     }
 }

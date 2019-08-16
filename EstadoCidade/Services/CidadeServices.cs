@@ -23,7 +23,7 @@ namespace EstadoCidade.Services
         private static JArray LerArquivo()
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + @"Jsons\Cidades.json";
-            return ReadFile.Read(path);
+            return ReadFile.ReadJson(path);
         }
 
         public List<CidadeModel> GetCidades()

@@ -4,6 +4,40 @@
         <name>EstadoCidade</name>
     </assembly>
     <members>
+        <member name="M:EstadoCidade.Controllers.CepController.GetCep(System.String)">
+            <summary>
+            Busca de Cep pelo numero
+            </summary>
+            <param name="numero">string</param>
+            <returns>List de cep</returns>
+        </member>
+        <member name="M:EstadoCidade.Controllers.CidadeController.GetCidades">
+            <summary>
+            Retorna todas as cidades do json de cidades
+            </summary>
+            <returns>List de CidadeModel</returns>
+        </member>
+        <member name="M:EstadoCidade.Controllers.CidadeController.GetCidadeByID(System.String)">
+            <summary>
+            Retorna lista de cidades do id solicitado
+            </summary>
+            <param name="id">String</param>
+            <returns>Lista de CidadeModel</returns>
+        </member>
+        <member name="M:EstadoCidade.Controllers.CidadeController.GetCidadeByUF(System.String)">
+            <summary>
+            Retona a lista de cidades de acordo com o uf solicitado
+            </summary>
+            <param name="id">string</param>
+            <returns>Lista de CidadeModel</returns>
+        </member>
+        <member name="M:EstadoCidade.Controllers.CidadeController.GetCidadeByNome(System.String)">
+            <summary>
+            Retorna lista de cidades com nome que contenha o parametro solicitado
+            </summary>
+            <param name="nome">string</param>
+            <returns>Lista de CidadeModel</returns>
+        </member>
         <member name="M:EstadoCidade.Controllers.EstadosController.#ctor(EstadoCidade.Interfaces.IEstadosServices)">
             <summary>
             
@@ -14,17 +48,25 @@
             <summary>
             Retorna todos os estados brasileiros
             </summary>
-            <returns></returns>
+            <returns>Lista EstadoModel</returns>
         </member>
         <member name="M:EstadoCidade.Controllers.EstadosController.GetEstadosByID(System.String)">
             <summary>
-            Retorna  estados brasileiros por id
+            Retorna todos os estados de acordo com o id solicitado
             </summary>
-            <returns></returns>
+            <param name="id">String</param>
+            <returns>Lista EstadoModel</returns>
         </member>
         <member name="M:EstadoCidade.Controllers.EstadosController.GetEstadosByNome(System.String)">
             <summary>
-            Retorna estados brasileiros pelo nome
+            Retorna todos os estados de acordo que contenha o nome solicitado
+            </summary>
+            <param name="nome">string</param>
+            <returns>Lista EstadoModel</returns>
+        </member>
+        <member name="M:EstadoCidade.Controllers.ImportacaoController.ImportaCep">
+            <summary>
+            
             </summary>
             <returns></returns>
         </member>
