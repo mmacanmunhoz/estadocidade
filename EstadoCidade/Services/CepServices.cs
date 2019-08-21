@@ -15,11 +15,19 @@ namespace EstadoCidade.Services
         public List<Cep> GetCepByNumber(string number)
         {
             MongoDbContext dbContext = new MongoDbContext();
-            var filter = new BsonDocument("CEP", number);
             var collection = dbContext.Ceps;
             List<Cep> lstCep = collection.Find<Cep>(x => x.CEP.Equals(number)).ToList<Cep>();
 
             return lstCep;
+        }
+
+        public long GetQtdCeps()
+        {
+            MongoDbContext dbContext = new MongoDbContext();
+            
+            var collection = dbContext.Ceps;
+            return collection.Count(new BsonDocument());
+
         }
     }
 }

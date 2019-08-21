@@ -9,5 +9,6 @@ namespace EstadoCidade.Interfaces
     public interface ICepServices
     {
         List<Cep> GetCepByNumber(string number);
+        long GetQtdCeps();
     }
 }

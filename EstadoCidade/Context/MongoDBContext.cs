@@ -18,12 +18,7 @@ namespace EstadoCidade.Context
         {
             try
             {
-                MongoClientSettings settings = MongoClientSettings.FromUrl(new MongoUrl(ConnectionString));
-                if (IsSSL)
-                {
-                    settings.SslSettings = new SslSettings { EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12 };
-                }
-                var mongoClient = new MongoClient(settings);
+                var mongoClient = new MongoClient(ConnectionString);
                 _database = mongoClient.GetDatabase(DatabaseName);
             }
             catch (Exception ex)
